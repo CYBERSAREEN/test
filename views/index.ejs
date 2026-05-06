@@ -1,0 +1,338 @@
+<%- include('partials/head', {title}) %>
+<%- include('partials/navbar') %>
+
+<!-- ══════════════════════════════════════════════
+     HERO SECTION
+═══════════════════════════════════════════════ -->
+<section class="hero-section" id="hero-section">
+  <!-- Floating orbs for parallax depth -->
+  <div class="float-orb orb-1"></div>
+  <div class="float-orb orb-2"></div>
+  <div class="float-orb orb-3"></div>
+  <!-- Animated aurora background -->
+  <div class="hero-bg-aurora"></div>
+  <!-- Floating notes & staff container -->
+  <div class="hero-particles" id="heroParticles"></div>
+  <!-- Floating staff notations -->
+  <div class="staff-layer" id="heroStaffLayer"></div>
+
+  <div class="hero-content container text-center">
+    <div class="hero-badge gsap-fade-up" data-delay="0">
+      <i class="fa-solid fa-location-dot me-2"></i>Zirakpur's Premier Music Academy
+    </div>
+
+    <!-- hero-brand-wrap ensures Great Vibes descenders are never clipped -->
+    <div class="hero-brand-wrap">
+      <h1 class="hero-brand gsap-brand">The Raw Studios</h1>
+    </div>
+
+    <h2 class="hero-title gsap-fade-up" data-delay="0.3">
+      Discover Your <span class="text-gradient">Musical &amp; Dance</span> Journey
+    </h2>
+    <p class="hero-subtitle gsap-fade-up" data-delay="0.5">
+      Professional instruction in music and dance for all ages and skill levels.<br/>
+      Join our vibrant community of artists and unlock your creative potential.
+    </p>
+    <div class="hero-ctas gsap-fade-up" data-delay="0.7">
+      <a href="/courses" class="btn btn-primary-trs btn-magnetic me-3">
+        <i class="fa-solid fa-music me-2"></i>Explore Courses
+      </a>
+      <a href="/contact" class="btn btn-outline-trs btn-magnetic">
+        <i class="fa-solid fa-calendar-check me-2"></i>Book Trial Lesson
+      </a>
+    </div>
+    <div class="hero-scroll-hint gsap-fade-up" data-delay="1">
+      <span>Scroll to explore</span>
+      <div class="scroll-dot"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION DIVIDER
+═══════════════════════════════════════════════ -->
+<div class="section-divider">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C480,60 960,0 1440,60 L1440,0 L0,0 Z" fill="#F5E7C6"/>
+  </svg>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     OUR COURSES — PREVIEW
+═══════════════════════════════════════════════ -->
+<section class="trs-section courses-preview-section" id="courses-preview" style="background:var(--bg1); position:relative; overflow:hidden;">
+  <!-- Subtle horizontal staff lines in bg -->
+  <div class="staff-layer" id="coursesStaffLayer" style="opacity:0.4"></div>
+
+  <div class="container" style="position:relative; z-index:1;">
+    <div class="section-header text-center">
+      <span class="section-tag gsap-reveal">Our Courses</span>
+      <h2 class="section-title gsap-reveal">Explore Our <span class="text-gradient">Programs</span></h2>
+      <p class="section-subtitle gsap-reveal">Comprehensive music and dance programs designed to nurture your artistic growth at every level.</p>
+    </div>
+
+    <h3 class="subsection-label gsap-reveal"><i class="fa-solid fa-music me-2"></i>Musical Classes</h3>
+
+    <div class="row g-4 courses-grid">
+      <% courses.forEach((course, i) => { %>
+      <div class="col-sm-6 col-lg-3 gsap-card" data-index="<%= i %>">
+        <div class="course-card" style="--card-color: <%= course.color %>">
+          <div class="course-card-glow"></div>
+          <div class="course-icon-wrap">
+            <i class="fa-solid <%= course.icon %>"></i>
+          </div>
+          <h4 class="course-title"><%= course.title %></h4>
+          <p class="course-by">By <%= course.instructor %></p>
+          <p class="course-desc"><%= course.desc %></p>
+          <div class="course-footer">
+            <span class="course-price">From <%= course.price %>/–</span>
+            <a href="/courses" class="btn-course-learn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+
+    <div class="text-center mt-5 gsap-reveal">
+      <a href="/courses" class="btn btn-primary-trs btn-magnetic">
+        <i class="fa-solid fa-grip me-2"></i> View All 12 Courses
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     INSTRUCTORS SECTION
+═══════════════════════════════════════════════ -->
+<section class="trs-section instructors-section" id="instructors" style="background:var(--bg0);position:relative;overflow:hidden;">
+  <div class="staff-layer" id="instructorsStaffLayer" style="opacity:0.3"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="section-header text-center">
+      <span class="section-tag gsap-reveal">The Team</span>
+      <h2 class="section-title gsap-reveal">Meet Our <span class="text-gradient">Instructors</span></h2>
+      <p class="section-subtitle gsap-reveal">World-class educators who bring passion, expertise, and inspiration to every lesson.</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <!-- Rounak -->
+      <div class="col-sm-6 col-lg-4 gsap-instructor" data-dir="left">
+        <div class="instructor-card">
+          <div class="instructor-avatar" style="--av-bg: linear-gradient(135deg, #1a3a5a, #3a6a9a)">
+            <span>R</span>
+            <div class="av-ring"></div>
+          </div>
+          <div class="instructor-body">
+            <h3 class="instructor-name">Rounak</h3>
+            <div class="instructor-tags">
+              <span class="itag">Singing</span>
+              <span class="itag">Guitar</span>
+              <span class="itag">Piano</span>
+            </div>
+            <div class="instructor-exp">
+              <i class="fa-solid fa-award me-2"></i>12+ years Experience
+            </div>
+            <p class="instructor-bio">Classical excellence and contemporary innovation in every lesson. Founder of The Raw Studios and touring musician.</p>
+            <a href="/contact" class="btn btn-book-lesson btn-magnetic">
+              <i class="fa-solid fa-calendar-plus me-2"></i>Book Lesson
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lakshay -->
+      <div class="col-sm-6 col-lg-4 gsap-instructor" data-dir="up">
+        <div class="instructor-card featured-instructor">
+          <div class="featured-badge"><i class="fa-solid fa-crown me-1"></i> Top Rated</div>
+          <div class="instructor-avatar" style="--av-bg: linear-gradient(135deg, #2a1a4a, #6a3aa0)">
+            <span>L</span>
+            <div class="av-ring"></div>
+          </div>
+          <div class="instructor-body">
+            <h3 class="instructor-name">Lakshay</h3>
+            <div class="instructor-tags">
+              <span class="itag">Kathak</span>
+              <span class="itag">Semi-Classical</span>
+              <span class="itag">Bhangra</span>
+            </div>
+            <div class="instructor-exp">
+              <i class="fa-solid fa-award me-2"></i>8+ years Experience
+            </div>
+            <p class="instructor-bio">From traditional Kathak to modern choreography — bringing fire, grace, and discipline to every performance.</p>
+            <a href="/contact" class="btn btn-book-lesson btn-magnetic">
+              <i class="fa-solid fa-calendar-plus me-2"></i>Book Lesson
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vedant -->
+      <div class="col-sm-6 col-lg-4 gsap-instructor" data-dir="right">
+        <div class="instructor-card">
+          <div class="instructor-avatar" style="--av-bg: linear-gradient(135deg, #0a3a30, #1a7a62)">
+            <span>V</span>
+            <div class="av-ring"></div>
+          </div>
+          <div class="instructor-body">
+            <h3 class="instructor-name">Vedant</h3>
+            <div class="instructor-tags">
+              <span class="itag">Flute</span>
+              <span class="itag">Sitar</span>
+              <span class="itag">Violin</span>
+            </div>
+            <div class="instructor-exp">
+              <i class="fa-solid fa-award me-2"></i>7+ years Experience
+            </div>
+            <p class="instructor-bio">Master of Indian and Western classical instruments. Brings deep musical knowledge to every guided session.</p>
+            <a href="/contact" class="btn btn-book-lesson btn-magnetic">
+              <i class="fa-solid fa-calendar-plus me-2"></i>Book Lesson
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     STATS SECTION
+═══════════════════════════════════════════════ -->
+<section class="stats-section" id="stats-section">
+  <div class="stats-bg-pattern"></div>
+  <!-- Horizontal staff lines as visual texture -->
+  <div class="stats-staff-deco" id="statsStaff">
+    <svg width="100%" height="60" viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="10" x2="1440" y2="10" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <line x1="0" y1="22" x2="1440" y2="22" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <line x1="0" y1="34" x2="1440" y2="34" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <line x1="0" y1="46" x2="1440" y2="46" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <line x1="0" y1="58" x2="1440" y2="58" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+    </svg>
+  </div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="row g-4 justify-content-center">
+      <div class="col-6 col-md-3 gsap-stat">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-calendar-days"></i></div>
+          <div class="stat-number" data-target="10" data-suffix="">10</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 gsap-stat">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-microphone-stand"></i></div>
+          <div class="stat-number" data-target="1200" data-suffix="+">1,200+</div>
+          <div class="stat-label">Auditorium Concerts</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 gsap-stat">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+          <div class="stat-number" data-target="500" data-suffix="+">500+</div>
+          <div class="stat-label">Happy Students</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 gsap-stat">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-medal"></i></div>
+          <div class="stat-number" data-target="95" data-suffix="%">95%</div>
+          <div class="stat-label">Merits in Music Exams</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     GOOGLE REVIEWS — Non-overlapping nav layout
+═══════════════════════════════════════════════ -->
+<section class="trs-section reviews-section" id="reviews-section" style="position:relative;overflow:hidden;">
+  <!-- Floating staff notation background -->
+  <div class="staff-layer" id="reviewsStaffLayer" style="opacity:0.35"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="section-header text-center">
+      <span class="section-tag gsap-reveal">Testimonials</span>
+      <h2 class="section-title gsap-reveal">Student <span class="text-gradient">Success Stories</span></h2>
+      <p class="section-subtitle gsap-reveal">Hear from our amazing students and families about their transformative experiences at The Raw Studios.</p>
+      <div class="google-rating-badge gsap-reveal">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="google-logo"/>
+        <div class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <span class="rating-text">4.9 — Google Reviews</span>
+        <% if (live) { %>
+        <span class="live-badge"><span class="live-dot"></span>Live</span>
+        <% } %>
+      </div>
+    </div>
+
+    <!-- Outer wrapper: swiper + [prev][pagination][next] row below -->
+    <div class="reviews-swiper-outer gsap-reveal">
+      <div class="swiper reviews-swiper">
+        <div class="swiper-wrapper">
+          <% reviews.forEach(review => { %>
+          <div class="swiper-slide">
+            <div class="review-card">
+              <div class="review-quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+              <div class="review-stars">
+                <% for(let i = 0; i < review.rating; i++) { %>
+                  <i class="fa-solid fa-star"></i>
+                <% } %>
+              </div>
+              <p class="review-text">"<%= review.text %>"</p>
+              <div class="review-author">
+                <img src="<%= review.profile_photo_url %>" alt="<%= review.author_name %>" class="review-avatar"/>
+                <div>
+                  <strong><%= review.author_name %></strong>
+                  <span><%= review.relative_time_description %></span>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="google-small-logo"/>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+      <!-- Nav row: prev · pagination dots · next — never overlaps swiper -->
+      <div class="reviews-nav-row">
+        <button class="swiper-nav-btn reviews-prev" aria-label="Previous review">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="reviews-pagination-wrap">
+          <div class="swiper-pagination reviews-pagination"></div>
+        </div>
+        <button class="swiper-nav-btn reviews-next" aria-label="Next review">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CTA BANNER
+═══════════════════════════════════════════════ -->
+<section class="cta-banner gsap-reveal">
+  <div class="cta-banner-glow"></div>
+  <!-- Staff lines decoration -->
+  <div class="cta-staff-lines" aria-hidden="true">
+    <div class="cta-staff-line"></div>
+    <div class="cta-staff-line"></div>
+    <div class="cta-staff-line"></div>
+    <div class="cta-staff-line"></div>
+    <div class="cta-staff-line"></div>
+  </div>
+  <div class="container text-center" style="position:relative;z-index:1;">
+    <h2 class="cta-title">Ready to Start Your <span class="text-gradient">Journey?</span></h2>
+    <p class="cta-subtitle">Join hundreds of students who have discovered their passion at The Raw Studios.</p>
+    <div class="cta-actions">
+      <a href="/contact" class="btn btn-primary-trs btn-magnetic me-3">
+        <i class="fa-solid fa-rocket me-2"></i>Get Started Today
+      </a>
+      <a href="tel:+919754444450" class="btn btn-outline-trs btn-magnetic">
+        <i class="fa-solid fa-phone me-2"></i>+91 9754444450
+      </a>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

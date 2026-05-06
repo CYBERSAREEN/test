@@ -1,0 +1,154 @@
+<%- include('partials/head', {title}) %>
+<%- include('partials/navbar') %>
+
+<!-- Page Hero -->
+<section class="page-hero about-hero" id="about-page">
+  <div class="page-hero-bg"></div>
+  <div class="about-hero-notes" id="aboutNotes"></div>
+  <div class="container text-center">
+    <span class="section-tag gsap-fade-up" data-delay="0.1">Who We Are</span>
+    <h1 class="page-hero-title gsap-fade-up" data-delay="0.2">About <span class="text-gradient">Us</span></h1>
+    <p class="page-hero-subtitle gsap-fade-up" data-delay="0.35">A sanctuary for artists, dreamers, and music lovers.</p>
+  </div>
+</section>
+
+<!-- My Story Section -->
+<section class="trs-section about-story-section">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-5 gsap-reveal" data-dir="left">
+        <div class="about-image-block">
+          <div class="about-avatar-lg" style="background: linear-gradient(135deg, #4ea8f3, #7c2dad)">
+            <span>R</span>
+          </div>
+          <div class="about-img-badge">
+            <i class="fa-solid fa-guitar"></i>
+            <span>Founder &amp; Lead Instructor</span>
+          </div>
+          <div class="about-img-float1"><i class="fa-solid fa-music"></i></div>
+          <div class="about-img-float2"><i class="fa-solid fa-star"></i></div>
+        </div>
+      </div>
+
+      <div class="col-lg-7 gsap-reveal" data-dir="right">
+        <span class="section-tag">My Story</span>
+        <h2 class="section-title mt-2">Rounak <span class="text-gradient">Singh</span></h2>
+        <div class="about-story-text">
+          <p>Rounak Singh, a dedicated musician and performer with more than ten years of experience, founded <strong>The Raw Studios</strong> in 2020 with the straightforward goal of establishing a space where individuals could genuinely connect with their art.</p>
+          <p>Rounak decided it was time to create something of his own — a place that feels like home for artists, students, and dreamers — after years of teaching music and touring India with his band.</p>
+          <p>We provide a variety of dance and music classes at The Raw Studios for students of all ages and abilities. For those who wish to express themselves through rhythm and movement, there is something here for everyone, including singing, guitar, piano, sitar, flute, and drums, as well as dance forms like Zumba, aerobics, lyrical, Bollywood, and even classical Kathak.</p>
+          <p>However, we are not merely an academy. In addition to being a <strong>record label</strong>, The Raw Studios provides a stage for independent musicians to express themselves and advance their careers.</p>
+          <p>Whether you're picking up your first instrument, returning to a passion, or chasing a professional dream — we're here to support your journey every beat of the way.</p>
+          <p>With the establishment of <strong>TRS Musical Store</strong> in 2023, a company dedicated to lowering the cost and increasing the accessibility of musical instruments both online and off, we made even more progress.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section" id="about-stats">
+  <div class="stats-bg-pattern"></div>
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+      <div class="col-6 col-md-3 gsap-stat">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-calendar-days"></i></div>
+          <div class="stat-number" data-target="10" data-suffix="">10</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 gsap-stat">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-microphone-stand"></i></div>
+          <div class="stat-number" data-target="1200" data-suffix="+">1,200+</div>
+          <div class="stat-label">Auditorium Concerts</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 gsap-stat">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+          <div class="stat-number" data-target="500" data-suffix="+">500+</div>
+          <div class="stat-label">Happy Students</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 gsap-stat">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-medal"></i></div>
+          <div class="stat-number" data-target="95" data-suffix="%">95%</div>
+          <div class="stat-label">Merits in Music Exams</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Google Reviews on About page -->
+<section class="trs-section reviews-section">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="section-tag gsap-reveal">Google Reviews</span>
+      <h2 class="section-title gsap-reveal">What Our <span class="text-gradient">Students Say</span></h2>
+      <div class="google-rating-badge gsap-reveal">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="google-logo"/>
+        <div class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <span class="rating-text">4.9 — Google Reviews</span>
+        <% if (live) { %>
+        <span class="live-badge"><span class="live-dot"></span>Live</span>
+        <% } %>
+      </div>
+    </div>
+
+    <!-- Outer wrapper: nav row lives below swiper, never overlaps slides -->
+    <div class="reviews-swiper-outer gsap-reveal">
+      <div class="swiper reviews-swiper">
+        <div class="swiper-wrapper">
+          <% reviews.forEach(review => { %>
+          <div class="swiper-slide">
+            <div class="review-card">
+              <div class="review-quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+              <div class="review-stars">
+                <% for(let i = 0; i < review.rating; i++) { %><i class="fa-solid fa-star"></i><% } %>
+              </div>
+              <p class="review-text">"<%= review.text %>"</p>
+              <div class="review-author">
+                <img src="<%= review.profile_photo_url %>" alt="<%= review.author_name %>" class="review-avatar"/>
+                <div>
+                  <strong><%= review.author_name %></strong>
+                  <span><%= review.relative_time_description %></span>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="google-small-logo"/>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+        <div class="swiper-pagination reviews-pagination"></div>
+      </div>
+      <div class="reviews-nav-row">
+        <button class="swiper-nav-btn reviews-prev" aria-label="Previous review">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="swiper-nav-btn reviews-next" aria-label="Next review">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner gsap-reveal">
+  <div class="cta-banner-glow"></div>
+  <div class="container text-center">
+    <h2 class="cta-title">Be Part of Our <span class="text-gradient">Story</span></h2>
+    <p class="cta-subtitle">Join the Raw Studios family and begin your artistic journey today.</p>
+    <a href="/contact" class="btn btn-primary-trs btn-magnetic">
+      <i class="fa-solid fa-handshake me-2"></i>Join The Family
+    </a>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
