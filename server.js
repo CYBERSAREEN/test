@@ -153,8 +153,8 @@ const coursesData = [
   { id:7,  title:'Violin',           instructor:'Vedant Sir',  category:'music', icon:'fa-sliders',       price:'₹2,499', desc:'Master the strings with classical & contemporary violin lessons.',                    image:'/images/courses/violin.jpg'        },
   { id:8,  title:'Sitar',            instructor:'Vedant Sir',  category:'music', icon:'fa-circle-nodes',  price:'₹2,499', desc:'Explore the depth of Indian classical music through sitar.',                         image:'/images/courses/sitar.jpg'         },
   { id:9,  title:'Classical Dance',  instructor:'Lakshay Sir', category:'dance', icon:'fa-star',          price:'₹2,499', desc:'Traditional Indian dance forms and graceful expressions.',                           image:'/images/courses/classicaldance.jpg'},
-  { id:10, title:'Bhangra Classes',  instructor:'Lakshay Sir', category:'dance', icon:'fa-fire',          price:'₹2,499', desc:'High-energy folk dance and rhythmic movements.',                                     image:'/images/courses/bhangra.jpg'       },
-  { id:11, title:'Western Dance',    instructor:'Lakshay Sir', category:'dance', icon:'fa-person-walking',price:'₹2,499', desc:'Urban dance styles and creative choreography.',                                       image:'/images/courses/western-dance.jpg' },
+  { id:10, title:'Bhangra Classes',  instructor:'Neha Mam', category:'dance', icon:'fa-fire',          price:'₹2,499', desc:'High-energy folk dance and rhythmic movements.',                                     image:'/images/courses/bhangra.jpg'       },
+  { id:11, title:'Western Dance',    instructor:'Neha Mam', category:'dance', icon:'fa-person-walking',price:'₹2,499', desc:'Urban dance styles and creative choreography.',                                       image:'/images/courses/western-dance.jpg' },
   { id:12, title:'Yoga',             instructor:'Monika',      category:'dance', icon:'fa-spa',           price:'₹2,499', desc:'Balance your mind and body through strength and flow.',                              image:'/images/courses/yoga.jpg'          },
 ];
 
