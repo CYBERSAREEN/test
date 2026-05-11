@@ -1,0 +1,116 @@
+<%- include('partials/head', {title}) %>
+<%- include('partials/navbar') %>
+
+<!-- Page Hero -->
+<section class="page-hero" id="label-page">
+  <div class="page-hero-bg"></div>
+  <div class="container text-center">
+    <span class="section-tag gsap-fade-up" data-delay="0.1">Record Label</span>
+    <h1 class="page-hero-title gsap-fade-up" data-delay="0.2">TRS <span class="text-gradient">Label</span></h1>
+    <p class="page-hero-subtitle gsap-fade-up" data-delay="0.35">Watch our live performances, student showcases, and original recordings.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     LIVE PERFORMANCES
+═══════════════════════════════════════════════ -->
+<section class="trs-section label-section">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <span class="section-tag gsap-reveal">On Stage</span>
+      <h2 class="section-title gsap-reveal">Live <span class="text-gradient">Performances</span></h2>
+      <p class="section-subtitle gsap-reveal">Watch our electrifying on-stage concerts and student showcases.</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <!-- Instagram Reels / Shorts — Coming Soon card -->
+      <div class="col-sm-8 col-md-5 col-lg-4 gsap-card" data-index="0">
+        <div class="reel-coming-soon-card">
+          <div class="reel-cs-inner">
+            <!-- top bar -->
+            <div class="reel-cs-topbar">
+              <span class="reel-cs-dot"></span>
+              <span class="reel-cs-dot"></span>
+              <span class="reel-cs-dot"></span>
+            </div>
+            <!-- icon area -->
+            <div class="reel-cs-icon-wrap">
+              <div class="reel-cs-ring reel-cs-ring-1"></div>
+              <div class="reel-cs-ring reel-cs-ring-2"></div>
+              <i class="fa-brands fa-instagram reel-cs-icon"></i>
+            </div>
+            <!-- text -->
+            <div class="reel-cs-body">
+              <h3 class="reel-cs-title">Student Reels &amp; Shorts</h3>
+              <p class="reel-cs-sub">Moments from our classes, performances &amp; backstage life — coming to Instagram very soon.</p>
+              <div class="reel-cs-badge">
+                <span class="reel-cs-dot-pulse"></span>
+                Coming Soon
+              </div>
+            </div>
+            <!-- bottom label -->
+            <div class="reel-cs-platform">
+              <i class="fa-brands fa-instagram me-2"></i>@therawstudiosofficial
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     RECORDED PERFORMANCES
+═══════════════════════════════════════════════ -->
+<section class="trs-section label-section" style="background:#F8F8F8;">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <span class="section-tag gsap-reveal">Studio Sessions</span>
+      <h2 class="section-title gsap-reveal">Recorded <span class="text-gradient">Performances</span></h2>
+      <p class="section-subtitle gsap-reveal">Explore our studio recordings, recitals, and original sessions.</p>
+    </div>
+
+    <div class="row g-4 videos-grid">
+      <% recordedVideos.forEach((video, i) => { %>
+      <div class="col-sm-6 col-lg-4 gsap-card" data-index="<%= i + liveVideos.length %>">
+        <div class="video-card" data-videoid="<%= video.id %>">
+          <div class="video-thumbnail" id="thumb-<%= i + liveVideos.length %>">
+            <img
+              src="https://img.youtube.com/vi/<%= video.id %>/maxresdefault.jpg"
+              alt="<%= video.title %>"
+              onerror="this.src='https://img.youtube.com/vi/<%= video.id %>/hqdefault.jpg'"
+              class="thumb-img"
+              loading="lazy"
+            />
+            <div class="video-overlay">
+              <div class="play-btn-wrap">
+                <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                <div class="play-ripple"></div>
+                <div class="play-ripple delay1"></div>
+              </div>
+            </div>
+          </div>
+          <div class="video-iframe-wrap" id="iframe-<%= i + liveVideos.length %>" style="display:none;"></div>
+          <div class="video-info">
+            <span class="video-type-badge" style="background:#222; color:#fff; font-size:0.7rem; padding:2px 10px; border-radius:20px; display:inline-block; margin-bottom:6px;"><i class="fa-solid fa-record-vinyl me-1"></i>Recorded</span>
+            <h4 class="video-title"><%= video.title %></h4>
+            <p class="video-artist"><i class="fa-solid fa-user-music me-1"></i><%= video.artist %></p>
+            <a href="https://www.youtube.com/watch?v=<%= video.id %>" target="_blank" rel="noopener" class="youtube-link">
+              <i class="fa-brands fa-youtube me-1"></i> Watch on YouTube
+            </a>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+
+    <div class="text-center mt-5 gsap-reveal">
+      <p class="label-cta-text">Are you an independent artist? Partner with us!</p>
+      <a href="/contact" class="btn btn-primary-trs btn-magnetic">
+        <i class="fa-solid fa-record-vinyl me-2"></i>Collaborate With TRS Label
+      </a>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

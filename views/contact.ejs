@@ -1,0 +1,147 @@
+<%- include('partials/head', {title}) %>
+<%- include('partials/navbar') %>
+
+<!-- Page Hero -->
+<section class="page-hero contact-hero" id="contact-page">
+  <div class="page-hero-bg"></div>
+  <div class="container text-center">
+    <span class="section-tag gsap-fade-up" data-delay="0.1">Let's Talk</span>
+    <h1 class="page-hero-title gsap-fade-up" data-delay="0.2">Get in <span class="text-gradient">Touch</span></h1>
+    <p class="page-hero-subtitle gsap-fade-up" data-delay="0.35">We are here to answer any question you may have.</p>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="trs-section contact-section">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+      <!-- Contact Info -->
+      <div class="col-lg-5 gsap-reveal" data-dir="left">
+        <div class="contact-info-card">
+          <h2 class="contact-info-title">Contact <span class="text-gradient">Details</span></h2>
+          <p class="contact-info-subtitle">Speak to our friendly team — we'd love to hear from you!</p>
+
+          <div class="contact-detail-item">
+            <div class="cd-icon" style="--ci: #4ea8f3"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <h5>Email Us</h5>
+              <a href="mailto:therawstudioofficial@gmail.com">therawstudioofficial@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="cd-icon" style="--ci: #b06cf4"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <h5>Call Us</h5>
+              <p>Mon–Sun, 8am – 8pm</p>
+              <a href="tel:+919754444450">+91 9754444450</a>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="cd-icon" style="--ci: #4fe8c8"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <h5>Visit Us</h5>
+              <p>The Raw Studios, First Floor, Sodhi Complex, SCO 1, VIP Rd, near SGR Clinic, Rail Vihar, Zirakpur, Punjab</p>
+            </div>
+          </div>
+
+          <!-- Map placeholder -->
+          <div class="map-embed">
+            <iframe
+              src="https://maps.google.com/maps?q=Rail+Vihar+Zirakpur+Punjab&output=embed"
+              width="100%"
+              height="220"
+              style="border:0;border-radius:12px;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="The Raw Studios Location"
+            ></iframe>
+          </div>
+
+          <div class="contact-social mt-4">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/therawstudiosofficial" target="_blank" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-lg-7 gsap-reveal" data-dir="right">
+        <div class="contact-form-card">
+          <h2 class="contact-form-title">Send a Message <span style="font-style:normal;">👍🏻</span></h2>
+          <p class="contact-form-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
+
+          <% if (success) { %>
+          <div class="alert trs-alert-success" role="alert">
+            <i class="fa-solid fa-circle-check me-2"></i><%= success %>
+          </div>
+          <% } %>
+
+          <form action="/contact" method="POST" class="contact-form" id="contactForm" novalidate>
+            <div class="row g-4">
+              <div class="col-12">
+                <div class="trs-form-group">
+                  <label class="trs-label">First Name <span class="required">*</span></label>
+                  <div class="trs-input-wrap">
+                    <i class="fa-solid fa-user input-icon"></i>
+                    <input type="text" name="firstName" class="form-control trs-input-field" placeholder="Your first name" required/>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="trs-form-group">
+                  <label class="trs-label">Phone Number <span class="required">*</span></label>
+                  <div class="trs-input-wrap">
+                    <i class="fa-solid fa-phone input-icon"></i>
+                    <input type="tel" name="phone" class="form-control trs-input-field" placeholder="+91 XXXXX XXXXX" required/>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="trs-form-group">
+                  <label class="trs-label">Email Address <span class="required">*</span></label>
+                  <div class="trs-input-wrap">
+                    <i class="fa-solid fa-envelope input-icon"></i>
+                    <input type="email" name="email" class="form-control trs-input-field" placeholder="you@example.com" required/>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="trs-form-group">
+                  <label class="trs-label">Course Interested In</label>
+                  <div class="trs-input-wrap">
+                    <i class="fa-solid fa-music input-icon"></i>
+                    <select name="message" class="form-control trs-input-field trs-select">
+                      <option value="">Select a course (optional)</option>
+                      <option>Singing Classes</option>
+                      <option>Guitar Classes</option>
+                      <option>Piano Classes</option>
+                      <option>Flute Classes</option>
+                      <option>Drums</option>
+                      <option>Cajon / Clapbox</option>
+                      <option>Violin</option>
+                      <option>Sitar</option>
+                      <option>Western Dance</option>
+                      <option>Classical Dance (Kathak)</option>
+                      <option>Bhangra</option>
+                      <option>Yoga</option>
+                      <option>Other / General Enquiry</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-submit-big btn-magnetic mt-4 w-100">
+              <span class="btn-text"><i class="fa-solid fa-paper-plane me-2"></i>Send Message</span>
+              <span class="btn-loading" style="display:none"><i class="fa-solid fa-spinner fa-spin me-2"></i>Sending...</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
